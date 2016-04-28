@@ -1,7 +1,6 @@
 /// <reference path="../typings/express/express.d.ts" />
 
 const Router = require('express').Router;
-const useragent = require('useragent');
 
 const availability = require('./availability');
 const usernames = require('./usernames');
@@ -11,36 +10,12 @@ const serviceExists = availability.serviceExists;
 const queryAll = availability.queryAll;
 const generate = usernames.generate;
 
-/**
- * Middleware that identifies if the user-agent is that of a user
- * If it is, it allows the request to continue down the current route
- */
-function isUser(req, res, next) {
-    if (useragent.parse(req.headers['user-agent']) === "Other") {
-        next('route');
-    } else {
-        next();
-    }
-}
-
-/**
- * Middleware that identifies if the user-agent is that of a bots
- * If it is, it allows the request to continue down the current route
- */
-function isBot(req, res, next) {
-    if (useragent.parse(req.headers['user-agent']) !== "Other") {
-        next('route');
-    } else {
-        next();
-    }
-}
-
 // a constructor of sorts, that creates and returns a configured express router
 function mountable() {
     let router = Router();
     
     // mount our main route for users
-    router.get('/', isUser, (req, res) => {
+    router.get('/', (req, res) => {
         
         // generate a username and get all it's availability info
         generate().then(queryAll).then((responseObject) => {
@@ -54,8 +29,8 @@ function mountable() {
         })
     });
     
-    // mount our main route for bots
-    router.get('/', isBot, (req, res) => {
+    // mount our main route for the API
+    router.get('/new', (req, res) => {
         
         // generate a username and get all it's availability info
         generate().then(queryAll).then((responseObject) => {
@@ -96,6 +71,9 @@ function mountable() {
             res.status(500).end();
         })
     });
+    
+    // the mountable function returns the configured Router instance we created
+    return router;
 }
 
 // export our behavior

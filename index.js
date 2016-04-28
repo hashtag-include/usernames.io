@@ -7,6 +7,7 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const baseball = require('baseball');
 
 const routes = require('./routes');
 
@@ -15,6 +16,11 @@ const PORT = process.env.PORT || 3000;
 
 // create our express application
 const app = express();
+
+// configure baseball to exit if runtime variables are missing
+baseball.defaults({
+    returnCode: -1
+});
 
 // configure nunjucks as our rendering engine
 nunjucks.configure('views', {
@@ -26,10 +32,10 @@ nunjucks.configure('views', {
 app.use(morgan("combined"));
 app.use(helmet());
 
-// configure our route handlers
-app.use(routes.mountable());
+// configure our route handlers for the root of the site, '/'
+app.use("/", routes.mountable());
 
 // start the application
 const server = app.listen(PORT, () => {
-    console.log("listening on " + server.address());
+    console.log(`listening on [${server.address().address}]:${server.address().port}`);
 });
