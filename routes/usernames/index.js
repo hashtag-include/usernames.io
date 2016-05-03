@@ -17,7 +17,7 @@ baseball("APPINSIGHTS_INSTRUMENTATIONKEY");
 const usernames = {
     "wordnik-verb": () => {
         let rootEndpoint = "http://api.wordnik.com/v4/words.json/randomWord";
-        let apiKey = process.env.WORDNIK_TOKEN;
+        let apiKey = process.env.WORDNIK_KEY;
         
         let verbMinLength = 0;
         let verbMaxLength = 6;
@@ -51,7 +51,7 @@ const usernames = {
     },
     "wordnik-adjective": () => {
         let rootEndpoint = "http://api.wordnik.com/v4/words.json/randomWord";
-        let apiKey = process.env.WORDNIK_TOKEN;
+        let apiKey = process.env.WORDNIK_KEY;
         
         let adjMinLength = 0;
         let adjMaxLength = 6;
