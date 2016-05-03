@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/b3ngr33ni3r/usernames.io#readme",
   "dependencies": {
+    "applicationinsights": "^0.15.14",
     "baseball": "^0.2.0",
     "bluebird": "^3.3.5",
     "express": "^4.13.4",

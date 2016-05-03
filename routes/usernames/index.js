@@ -5,10 +5,12 @@ const Promise = require('bluebird');
 const request = require('request-promise');
 const baseball = require('baseball');
 const upperCamelCase = require('uppercamelcase');
+const appInsights = require("applicationinsights");
 
-// require WORDNIK_TOKEN token to be set at runtime
+// require WORDNIK_KEY token to be set at runtime
 // see github.com/bengreenier/baseball for more info
-baseball("WORDNIK_TOKEN");
+baseball("WORDNIK_KEY");
+baseball("APPINSIGHTS_INSTRUMENTATIONKEY");
 
 // all the supported username generators we support
 // each checker should return a Promise<string>
@@ -38,7 +40,11 @@ const usernames = {
                 json: true
             })
         ]).spread((verb, idiom) => {
-                
+            
+            // track this generation via app insights
+            let client = appInsights.getClient();
+            client.trackEvent("wordnik-verb", {verb: verb, idiom: idiom});
+            
             // concatenate the verb and the idiom using pascal casing
             return upperCamelCase(verb, idiom);
         });
@@ -68,7 +74,11 @@ const usernames = {
                 json: true
             })
         ]).spread((adj, idiom) => {
-                
+            
+            // track this generation via app insights
+            let client = appInsights.getClient();
+            client.trackEvent("wordnik-adjective", {adjective: adj, idiom: idiom});
+            
             // concatenate the adj and the idiom using pascal casing
             return upperCamelCase(adj, idiom);
         });

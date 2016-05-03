@@ -71,7 +71,7 @@ const avails = {
  * parameter set
  */
 function isService (req, res, next) {
-    if (typeof(req.params.service) !== "undefined" && Object.keys(avails).indexOf() > -1) {
+    if (typeof(req.params.service) !== "undefined" && Object.keys(avails).indexOf(req.params.service) > -1) {
         next();
     } else {
         next(new Error("Invalid service " + req.params.service));
