@@ -9,7 +9,7 @@ quickly generate usernames
 
 ## /new
 
-Requets a new username, and it's availability info.
+Requests a new username, and it's availability info.
 
 ```
 {
@@ -24,7 +24,7 @@ Requets a new username, and it's availability info.
 }
 ```
 
-## /availability/:service?username=<username>
+## /availability/:service?username=&lt;username&gt;
 
 Requests availability for a specific service and a given username.
 
