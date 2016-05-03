@@ -28,7 +28,7 @@ function mountable() {
             // we need to create our templateInjection object
             let templateInjection = {
                 username: username,
-                appInsightsId: process.env.APP_INSIGHTS_KEY
+                appInsightsId: process.env.APPINSIGHTS_INSTRUMENTATIONKEY
             };
             
             // render the results
