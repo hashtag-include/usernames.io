@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
-    "postinstall": "node ./node_modules/grab-typings/dist/lib/grab-typings.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,6 @@
     "uppercamelcase": "^1.1.0"
   },
   "devDependencies": {
-    "grab-typings": "^1.1.10",
     "mocha": "^2.4.5",
     "supertest": "^1.2.0"
   }
