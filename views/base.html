@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <title>{{username}} | usernames.io</title>
+
+    <!-- Set the viewport width to device width for mobile -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- SEO metas -->
+	<meta name="author" content="usernames.io">
+	<meta name="description" content="Create awesome and unique usernames!">
+	<meta name="keywords" content="username, generator, unique" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/font-awesome.min.css">
+	
+</head>
+<body>
+	<div class="header">
+		<a href="/"><img src="/images/usernamesio_logo.png" alt="usernames.io logo" id="logo"/></a>
+	</div>
+	
+	<div class="content">
+    {% block content %}
+    {% endblock %}
+	</div>
+
+	<!-- Scripts -->
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+	<script src="/scripts/custom.js"></script>
+    
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        }({
+            instrumentationKey:"{{appInsightsId}}"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+
+</body>
+</html>

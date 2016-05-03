@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>How about <span id="username">{{username}}</span>?</h1>
+
+<ul class="availability">
+    <li>
+        <i class="fa fa-globe fa-2x"></i>
+        <a href="http://www.namecheap.com/?aff=72210" title="Register on Namecheap" target="_blank">{{username}}.com</a>
+        <div class="loading" data-svc="dot-com">
+            <i class="loading-spinner"></i>
+            <i class="fa fa-check-circle available"></i>
+            <i class="fa fa-times-circle unavailable"></i>
+        </div>
+    </li>
+    <li>
+        <i class="fa fa-facebook fa-2x"></i>
+        <a href="https://www.facebook.com/{{username}}" title="Register on Facebook" target="_blank">facebook.com/{{username}}</a>
+        <div class="loading" data-svc="facebook">
+            <i class="loading-spinner"></i>
+            <i class="fa fa-check-circle available"></i>
+            <i class="fa fa-times-circle unavailable"></i>
+        </div>
+    </li>
+    <li>
+        <i class="fa fa-twitter fa-2x"></i>
+        <a href="https://twitter.com/signup" title="Register on Twitter" target="_blank">twitter.com/{{username}}</a>
+        <div class="loading" data-svc="twitter">
+            <i class="loading-spinner"></i>
+            <i class="fa fa-check-circle available"></i>
+            <i class="fa fa-times-circle unavailable"></i>
+        </div>
+    </li>
+    <li>
+        <i class="fa fa-github fa-2x"></i>
+        <a href="https://github.com/join" title="Register on GitHub" target="_blank">github.com/{{username}}</a>
+        <div class="loading" data-svc="github">
+            <i class="loading-spinner"></i>
+            <i class="fa fa-check-circle available"></i>
+            <i class="fa fa-times-circle unavailable"></i>
+        </div>
+    </li>
+    <li>
+        <i class="fa fa-linkedin fa-2x"></i>
+        <a href="http://www.linkedin.com/profile/public-profile-settings" title="Register on LinkedIn" target="_blank">linkedin.com/in/{{username}}</a>
+        <div class="loading" data-svc="linkedin">
+            <i class="loading-spinner"></i>
+            <i class="fa fa-check-circle available"></i>
+            <i class="fa fa-times-circle unavailable"></i>
+        </div>
+    </li>
+</ul>
+{% endblock %}
