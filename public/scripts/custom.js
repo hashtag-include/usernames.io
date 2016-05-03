@@ -5,8 +5,7 @@ $(document).ready(function () {
 	$('.unavailable').hide();
 
 	username = $('#username').text();
-	console.log(username);
-
+	
 	var servicesList = $('.loading');
 	$.each(servicesList, function(service) {
 		var $this = $(this);
