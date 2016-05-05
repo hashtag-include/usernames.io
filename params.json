@@ -1,0 +1,6 @@
+{
+  "name": "Usernames.io",
+  "tagline": "quickly generate usernames",
+  "body": "[usernames.io](http://usernames.io)\r\n==============\r\n\r\n[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)\r\n\r\nquickly generate usernames\r\n\r\n# API\r\n\r\n## /new\r\n\r\nRequests a new username, and it's availability info.\r\n\r\n```\r\n{\r\n    \"username\": \"\",\r\n    \"availability\": {\r\n        \"github\": true,\r\n        \"linkedin\": true,\r\n        \"dot-com\": true,\r\n        \"facebook\": true,\r\n        \"twitter\": true\r\n    }\r\n}\r\n```\r\n\r\n## /availability/:service?username=&lt;username&gt;\r\n\r\nRequests availability for a specific service and a given username.\r\n\r\n```\r\n{\r\n    \"service\": true\r\n}\r\n```\r\n\r\n# License\r\n\r\nMIT",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
