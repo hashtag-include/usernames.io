@@ -4,6 +4,8 @@
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 quickly generate usernames
+> Learn more - see "behind the scenes" [here](http://hashtaginclude.com/usernames.io/)
+
 
 # API
 
